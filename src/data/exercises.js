@@ -13,6 +13,10 @@
 // Phase 3 always reuses aiImage from Phase 1 — no separate hotspotImage field.
 // Principles are only named inside hotspot explanation fields (never in feedbackCorrect/Incorrect).
 
+// Vite replaces import.meta.env.BASE_URL with '/' in dev and '/realeye-tol-final-project/'
+// in production, so image paths resolve correctly in both environments.
+const BASE = import.meta.env.BASE_URL
+
 const exercises = [
   {
     id: "round1",
@@ -20,8 +24,8 @@ const exercises = [
     scaffoldLevel: "glow", // Round 1: hotspot regions pulse to guide the learner
 
     // Phase 1
-    realImage: "/images/round1-real.jpg",
-    aiImage: "/images/round1-ai.jpg",
+    realImage: `${BASE}images/round1-real.jpg`,
+    aiImage: `${BASE}images/round1-ai.jpg`,
     comparePrompt:
       "Look at these two photos:",
     // shown after the learner submits their observation text — same for all responses
@@ -86,8 +90,8 @@ const exercises = [
     scaffoldLevel: "checklist", // Round 2: checklist side panel; no glowing regions
 
     // Phase 1
-    realImage: "/images/round2-real.jpg",
-    aiImage: "/images/round2-ai.jpg",
+    realImage: `${BASE}images/round2-real.jpg`,
+    aiImage: `${BASE}images/round2-ai.jpg`,
     comparePrompt:
       "Look at these two photos:",
     // shown after the learner submits their observation text — same for all responses
@@ -151,8 +155,8 @@ const exercises = [
     scaffoldLevel: "none", // Round 3: no scaffolding — fully independent analysis
 
     // Phase 1
-    realImage: "/images/round3-real.jpg",
-    aiImage: "/images/round3-ai.jpg",
+    realImage: `${BASE}images/round3-real.jpg`,
+    aiImage: `${BASE}images/round3-ai.jpg`,
     comparePrompt:
       "Look at these two photos:",
     // shown after the learner submits their observation text — same for all responses
