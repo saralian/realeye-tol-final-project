@@ -36,10 +36,12 @@ export default function ChecklistPanel({ artifactTypes, artifactHints = {}, reve
                   })}
                 >
                   <span
-                    className="flex items-center justify-center w-4 h-4 rounded-full bg-gray-200 text-gray-600 text-[10px] font-bold cursor-default select-none"
+                    className="flex items-center justify-center w-5 h-5 rounded-full bg-yellow-400 border-2 border-white shadow-md cursor-default select-none"
                     aria-hidden="true"
                   >
-                    ?
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 text-yellow-900" aria-hidden="true">
+                      <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z" />
+                    </svg>
                   </span>
                   <div className="absolute bottom-full right-0 mb-1.5 hidden group-hover:block z-30 w-44 bg-gray-800 text-white text-xs rounded-lg px-2.5 py-2 leading-snug shadow-lg pointer-events-none">
                     {conceptHint}
@@ -69,8 +71,8 @@ export default function ChecklistPanel({ artifactTypes, artifactHints = {}, reve
                     className={[
                       'flex items-center justify-center w-5 h-5 rounded-full border-2 border-white shadow text-[10px] font-bold select-none',
                       isRevealed
-                        ? 'bg-green-500 text-white cursor-default'
-                        : 'bg-yellow-400 text-yellow-900 cursor-pointer hover:bg-yellow-300',
+                        ? 'bg-gray-500 text-white cursor-default'
+                        : 'bg-cyan-400 text-cyan-900 cursor-pointer hover:bg-cyan-300',
                     ].join(' ')}
                   >
                     !
@@ -78,7 +80,7 @@ export default function ChecklistPanel({ artifactTypes, artifactHints = {}, reve
                   {/* Tooltip — only shown when not yet revealed */}
                   {!isRevealed && (
                     <div className="absolute bottom-full right-0 mb-1.5 hidden group-hover:block z-30 w-36 bg-gray-800 text-white text-xs rounded-lg px-2.5 py-2 leading-snug shadow-lg pointer-events-none">
-                      click to reveal hotspots
+                      Click to reveal hotspots
                       <div className="absolute top-full right-1.5 border-4 border-transparent border-t-gray-800" />
                     </div>
                   )}
